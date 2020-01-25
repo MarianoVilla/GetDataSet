@@ -19,10 +19,17 @@ namespace GetDataSet.Lib
         {
             return GetNodesFromURLByName(URL, NodeNames).Select(x => x.InnerText);
         }
+        /// <summary>
+        /// Gets a collection of nodes from a URL.
+        /// </summary>
+        /// <param name="URL"></param>
+        /// <param name="NodeNames"></param>
+        /// <returns></returns>
         public static IEnumerable<HtmlNode> GetNodesFromURLByName(string URL, params string[] NodeNames)
         {
             string RawHTML = HTTPHandler.GetHTML(URL);
             return HTMLParser.GetNodesByName(RawHTML, NodeNames);
         }
+
     }
 }

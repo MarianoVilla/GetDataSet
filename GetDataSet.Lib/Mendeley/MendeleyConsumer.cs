@@ -13,7 +13,7 @@ namespace GetDataSet.Lib.Mendeley
         static string SearchResultHeader = "search-result__header-text";
         string SanityCheckURL = "https://data.mendeley.com/datasets?query=musical%20instruments&page=0&type=VIDEO&type=IMAGE";
 
-        //TODO: this should return Mendeley objects instead of the raw.
+        //TODO: this should return Mendeley objects instead of the raw. So, parse the HTML.
         public static IEnumerable<string> Search(string Filter, MendeleyDataType[] Types = null)
         {
             MendeleyURL = $"{MendeleyURL}?query={WebUtility.UrlEncode(Filter)}&page=0&{ParseTypes(Types)}";
