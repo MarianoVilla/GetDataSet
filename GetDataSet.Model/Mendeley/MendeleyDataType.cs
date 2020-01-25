@@ -11,5 +11,27 @@ public enum MendeleyDataType
     [Description("AUDIO")]
     Audio,
     [Description("VIDEO")]
-    Video
+    Video,
+    [Description("COLLECTION")]
+    Collection,
+    [Description("PHYSICAL_OBJECT")]
+    PhysicalObject,
+    [Description("INTERACTIVE_RESOURCE")]
+    InteractiveResource,
+    [Description("TEXT")]
+    Text,
+    [Description("OTHER")]
+    Other,
+    [Description("SLIDES")]
+    Slides,
+    [Description("SOFTWARE_CODE")]
+    SoftwareCode,
+    [Description("GEO_DATA")]
+    GeoData,
+    [Description("TABULAR_DATA")]
+    TabularData,
+    [Description("FILE_SET")]
+    FileSet,
+    [Description("WORKFLOW")]
+    WorkFlow
 }

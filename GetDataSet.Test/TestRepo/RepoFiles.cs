@@ -8,6 +8,8 @@ public enum RepoFiles
                 MendeleyMusicalInstrumentsSearch,
                 [Description(@"F:\Source\GetDataSet\GetDataSet.Test\TestRepo\HTML\MendeleyMusicSearch.html")]
                 MendeleyMusicSearch,
+                [Description(@"F:\Source\GetDataSet\GetDataSet.Test\TestRepo\HTML\MendeleyMusicSearchStripped.html")]
+                MendeleyMusicSearchStripped,
                 [Description(@"F:\Source\GetDataSet\GetDataSet.Test\TestRepo\HTML\SimpleHTML.html")]
                 SimpleHTML,
          

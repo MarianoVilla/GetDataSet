@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GetDataSet.Lib
+namespace GetDataSet.Lib.ScrapLib
 {
     public class HTMLParser
     {
@@ -14,8 +14,18 @@ namespace GetDataSet.Lib
             List<HtmlNode> Nodes = new List<HtmlNode>();
             var htmlDocument = LoadDocument(RawHTML);
 
-            foreach(var nn in NodeNames)
+            foreach (var nn in NodeNames)
                 Nodes.AddRange(htmlDocument.DocumentNode.Descendants(nn));
+
+            return Nodes;
+        }
+        public static List<HtmlNode> GetNodesByClass(string RawHTML, params string[] Classes)
+        {
+            List<HtmlNode> Nodes = new List<HtmlNode>();
+            var htmlDocument = LoadDocument(RawHTML);
+
+            foreach (var c in Classes)
+                Nodes.AddRange(htmlDocument.DocumentNode.Descendants(0).Where(x => x.HasClass(c)));
 
             return Nodes;
         }

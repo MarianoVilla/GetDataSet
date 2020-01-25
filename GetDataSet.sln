@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetDataSet.Builder", "GetDa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetDataSet.Model", "GetDataSet.Model\GetDataSet.Model.csproj", "{03FA227E-8ABD-441F-8C17-0B0C74EB233E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetDataSet.ConsoleApp", "GetDataSet.ConsoleApp\GetDataSet.ConsoleApp.csproj", "{D7D87A0C-C34E-439C-8027-90835C8F6A30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{03FA227E-8ABD-441F-8C17-0B0C74EB233E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03FA227E-8ABD-441F-8C17-0B0C74EB233E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03FA227E-8ABD-441F-8C17-0B0C74EB233E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7D87A0C-C34E-439C-8027-90835C8F6A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D87A0C-C34E-439C-8027-90835C8F6A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D87A0C-C34E-439C-8027-90835C8F6A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D87A0C-C34E-439C-8027-90835C8F6A30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

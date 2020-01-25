@@ -41,9 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mendeley\Author.cs" />
+    <Compile Include="Mendeley\MendeleyJSONFacets.cs" />
+    <Compile Include="Mendeley\MendeleyJSONList.cs" />
+    <Compile Include="Mendeley\MendeleyJSONRootObject.cs" />
+    <Compile Include="Mendeley\MendeleyJSONResult.cs" />
     <Compile Include="Mendeley\MendeleySearchResult.cs" />
     <Compile Include="Mendeley\MendeleySearchResultCollection.cs" />
     <Compile Include="Mendeley\MendeleyDataType.cs" />
+    <Compile Include="Mendeley\PublicationDate.cs" />
+    <Compile Include="Mendeley\Range.cs" />
+    <Compile Include="Mendeley\RepositoryType.cs" />
+    <Compile Include="Mendeley\RootObject.cs" />
+    <Compile Include="Mendeley\MendeleyJSONSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
