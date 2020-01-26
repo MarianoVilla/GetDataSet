@@ -27,6 +27,7 @@ namespace GetDataSet
     [Guid(GetDataSetPackage.PackageGuidString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [ProvideToolWindow(typeof(MainWindow))]
+    [ProvideToolWindow(typeof(SearchResultWindow))]
     public sealed class GetDataSetPackage : AsyncPackage
     {
         /// <summary>
@@ -49,6 +50,7 @@ namespace GetDataSet
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await MainWindowCommand.InitializeAsync(this);
+            await SearchResultWindowCommand.InitializeAsync(this);
         }
 
         #endregion

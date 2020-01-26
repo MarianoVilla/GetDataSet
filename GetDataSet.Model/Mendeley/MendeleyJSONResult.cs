@@ -10,6 +10,7 @@ namespace GetDataSet.Model.Mendeley
     {
         public string id { get; set; }
         public string externalId { get; set; }
+        //TODO: remove "<strong>" tags coming from the search result formatting.
         public string containerTitle { get; set; }
         public string source { get; set; }
         public DateTime lastImported { get; set; }

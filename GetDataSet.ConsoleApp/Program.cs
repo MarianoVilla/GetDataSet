@@ -9,7 +9,7 @@ namespace GetDataSet.ConsoleApp
     {
         static void Main(string[] args)
         {
-            var Result = HTTPHandler.GetJSON<MendeleyJSONRootObject>(@"https://data.mendeley.com/api/public_datasets_search?query=music");
+            var Result = MendeleyRESTConsumer.Search("Music");
         }
     }
 }

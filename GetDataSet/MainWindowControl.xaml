@@ -7,13 +7,26 @@
              Background="{DynamicResource {x:Static vsshell:VsBrushes.WindowKey}}"
              Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
              mc:Ignorable="d" d:DesignWidth="300"
-             Name="MyToolWindow" Height="153.982">
-    <Grid Height="154" VerticalAlignment="Top">
-        <StackPanel Orientation="Vertical" Height="144" VerticalAlignment="Top">
-            <TextBlock Margin="10" HorizontalAlignment="Center">GetDataSet</TextBlock>
-            <!--<TextBlock HorizontalAlignment="Center">Search</TextBlock>-->
-            <TextBox Margin="5 10 5 5"></TextBox>
-            <Button Margin="50 10 50 0" Content="Search" Click="btnSearch_Click" Name="btnSearch"/>
-        </StackPanel>
+             Name="MyToolWindow" Height="176.548">
+    <Grid Height="169" VerticalAlignment="Top" Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <!--<ColumnDefinition Width="27*"/>-->
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="27*"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="18" Grid.Row="1" Margin="97,0,104,0" HorizontalAlignment="Center" Width="99" Height="24" VerticalAlignment="Top">GetDataSet</TextBlock>
+        <Label Grid.Row="2" FontSize="14" Margin="5,5,0,0">Search text:</Label>
+        <TextBox Grid.Row="3" Margin="10,5" x:Name="txtSearchQuery"/>
+        <Label Grid.Row="4" FontSize="14" Margin="5,0,0,0" RenderTransformOrigin="0.593,0.489">Data Type:</Label>
+        <ComboBox x:Name="cboDataTypes" Grid.Row="4" Grid.Column="0" Margin="86,5,10,0" RenderTransformOrigin="0.483,2.065"/>
+        <Button Grid.Row="6" Margin="50 0 50 0" Content="Search" Click="btnSearch_Click" x:Name="btnSearch"/>
     </Grid>
 </UserControl>

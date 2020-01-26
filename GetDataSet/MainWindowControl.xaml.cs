@@ -1,5 +1,7 @@
 ﻿namespace GetDataSet
 {
+    using GetDataSet.Lib.Mendeley;
+    using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Windows;
     using System.Windows.Controls;
@@ -17,23 +19,28 @@
             this.InitializeComponent();
         }
 
-        /// <summary>
-        /// Handles click on the button by displaying a message box.
-        /// </summary>
-        /// <param name="sender">The event sender.</param>
-        /// <param name="e">The event args.</param>
-        [SuppressMessage("Microsoft.Globalization", "CA1300:SpecifyMessageBoxOptions", Justification = "Sample code")]
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:ElementMustBeginWithUpperCaseLetter", Justification = "Default event handler naming pattern")]
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(
-                string.Format(System.Globalization.CultureInfo.CurrentUICulture, "Invoked '{0}'", this.ToString()),
-                "MainWindow");
-        }
-
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            if (InvalidQuery())
+                return;
+            var SearchResults = MendeleyRESTConsumer.Search(txtSearchQuery.Text);
+            new SearchResultWindowControl(SearchResults);
+            //TODO: validate result (handle none and so).
+            //new SearchResultWindow(SearchResult);
+        }
+        bool InvalidQuery()
+        {
+            if (string.IsNullOrWhiteSpace(txtSearchQuery.Text))
+            {
+                MessageBox.Show("A search box needs a text!");
+                return true;
+            }
+            return false;
+        }
 
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            cboDataTypes.ItemsSource = Enum.GetValues(typeof(MendeleyDataType));
         }
     }
 }

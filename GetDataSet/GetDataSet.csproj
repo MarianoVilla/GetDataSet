@@ -52,6 +52,11 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GetDataSetPackage.cs" />
+    <Compile Include="SearchResultWindow.cs" />
+    <Compile Include="SearchResultWindowCommand.cs" />
+    <Compile Include="SearchResultWindowControl.xaml.cs">
+      <DependentUpon>SearchResultWindowControl.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="source.extension.vsixmanifest">
@@ -74,18 +79,36 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.202" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.4.1057" />
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindowControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SearchResultWindowControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\SearchResultWindowCommand.png" />
     <VSCTCompile Include="GetDataSetPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
     </VSCTCompile>
     <Content Include="Resources\MainWindowCommand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GetDataSet.Lib\GetDataSet.Lib.csproj">
+      <Project>{7f3042fc-4164-4615-837d-1b1a69e8e66d}</Project>
+      <Name>GetDataSet.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GetDataSet.Model\GetDataSet.Model.csproj">
+      <Project>{03fa227e-8abd-441f-8c17-0b0c74eb233e}</Project>
+      <Name>GetDataSet.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
